@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## DealPilot AI architecture
+
+- Keep the fictional deal facts centralized in `src/lib/dealpilot-data.ts` and the preview-only workspace state in one shared client provider so all seven sections stay consistent without implying backend persistence or real document verification.

@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuditTrailRouteImport } from './routes/audit-trail'
+import { Route as ChangeImpactRouteImport } from './routes/change-impact'
+import { Route as DependencyMapRouteImport } from './routes/dependency-map'
+import { Route as DiligenceRouteImport } from './routes/diligence'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as ValuationRouteImport } from './routes/valuation'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuditTrailRoute = AuditTrailRouteImport.update({
+  id: '/audit-trail',
+  path: '/audit-trail',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChangeImpactRoute = ChangeImpactRouteImport.update({
+  id: '/change-impact',
+  path: '/change-impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DependencyMapRoute = DependencyMapRouteImport.update({
+  id: '/dependency-map',
+  path: '/dependency-map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiligenceRoute = DiligenceRouteImport.update({
+  id: '/diligence',
+  path: '/diligence',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ValuationRoute = ValuationRouteImport.update({
+  id: '/valuation',
+  path: '/valuation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/audit-trail': typeof AuditTrailRoute
+  '/change-impact': typeof ChangeImpactRoute
+  '/dependency-map': typeof DependencyMapRoute
+  '/diligence': typeof DiligenceRoute
+  '/reports': typeof ReportsRoute
+  '/valuation': typeof ValuationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/audit-trail': typeof AuditTrailRoute
+  '/change-impact': typeof ChangeImpactRoute
+  '/dependency-map': typeof DependencyMapRoute
+  '/diligence': typeof DiligenceRoute
+  '/reports': typeof ReportsRoute
+  '/valuation': typeof ValuationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/audit-trail': typeof AuditTrailRoute
+  '/change-impact': typeof ChangeImpactRoute
+  '/dependency-map': typeof DependencyMapRoute
+  '/diligence': typeof DiligenceRoute
+  '/reports': typeof ReportsRoute
+  '/valuation': typeof ValuationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/audit-trail'
+    | '/change-impact'
+    | '/dependency-map'
+    | '/diligence'
+    | '/reports'
+    | '/valuation'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/audit-trail'
+    | '/change-impact'
+    | '/dependency-map'
+    | '/diligence'
+    | '/reports'
+    | '/valuation'
+  id:
+    | '__root__'
+    | '/'
+    | '/audit-trail'
+    | '/change-impact'
+    | '/dependency-map'
+    | '/diligence'
+    | '/reports'
+    | '/valuation'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuditTrailRoute: typeof AuditTrailRoute
+  ChangeImpactRoute: typeof ChangeImpactRoute
+  DependencyMapRoute: typeof DependencyMapRoute
+  DiligenceRoute: typeof DiligenceRoute
+  ReportsRoute: typeof ReportsRoute
+  ValuationRoute: typeof ValuationRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/audit-trail': {
+      id: '/audit-trail'
+      path: '/audit-trail'
+      fullPath: '/audit-trail'
+      preLoaderRoute: typeof AuditTrailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/change-impact': {
+      id: '/change-impact'
+      path: '/change-impact'
+      fullPath: '/change-impact'
+      preLoaderRoute: typeof ChangeImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dependency-map': {
+      id: '/dependency-map'
+      path: '/dependency-map'
+      fullPath: '/dependency-map'
+      preLoaderRoute: typeof DependencyMapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diligence': {
+      id: '/diligence'
+      path: '/diligence'
+      fullPath: '/diligence'
+      preLoaderRoute: typeof DiligenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/valuation': {
+      id: '/valuation'
+      path: '/valuation'
+      fullPath: '/valuation'
+      preLoaderRoute: typeof ValuationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuditTrailRoute: AuditTrailRoute,
+  ChangeImpactRoute: ChangeImpactRoute,
+  DependencyMapRoute: DependencyMapRoute,
+  DiligenceRoute: DiligenceRoute,
+  ReportsRoute: ReportsRoute,
+  ValuationRoute: ValuationRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
