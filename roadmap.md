@@ -1,7 +1,9 @@
-# DealPilot AI MVP
+# DealPilot AI — expanded master brief
 
-- [ ] Centralize fictional NovaTech deal facts, assumptions, risks, reports, and audit seed data.
-- [ ] Build the shared responsive workspace shell and all seven navigable sections.
-- [ ] Implement evidence selection, assumption review, impact approval, diligence review, and report download interactions.
-- [ ] Apply the requested dark enterprise visual system and unique metadata to each section.
-- [ ] Run the focused data tests, inspect preview diagnostics, verify key desktop/mobile flows, and commit the completed work.
+- [ ] Reconcile the current seven-section shell with the new ten-section navigation, keeping Dashboard separate from Deal Workspace.
+- [ ] Add editable demo-deal inputs and browser-local persistence with explicit local-only status and safe reset.
+- [ ] Build the dashboard, change-impact comparison, expanded diligence, and interactive dependency relationships from shared state.
+- [ ] Extend Valuation Studio with transparent DCF, illustrative-only comparables, and editable sensitivity assumptions.
+- [ ] Build a deterministic Deal Failure Simulator with configurable stresses, failure thresholds, scenario comparisons, and mitigations.
+- [ ] Complete report previews/downloads and use only genuine in-session actions in the audit trail.
+- [ ] Test figures, calculations, navigation, persistence, uploads, review actions, downloads, and responsive layouts; resolve diagnostics and commit.

@@ -31,4 +31,4 @@ use the editor.
 
 ## DealPilot AI architecture
 
-- Keep the fictional deal facts centralized in `src/lib/dealpilot-data.ts` and the preview-only workspace state in one shared client provider so all seven sections stay consistent without implying backend persistence or real document verification.
+- Keep defaults centralized and editable workspace state in one shared provider with browser-local persistence after hydration so the ten sections stay consistent without implying a connected backend or real document verification.
